@@ -7,4 +7,6 @@ Worker Process Crash & Debug
 * https://fullsocrates.wordpress.com/category/iis-stories/
 * PSTools: https://learn.microsoft.com/en-us/sysinternals/downloads/pstools 
 * PSPing: https://learn.microsoft.com/en-us/sysinternals/downloads/psping (PsPing implements Ping functionality, TCP ping, latency and bandwidth measurement.)
+* Sysinternals: https://learn.microsoft.com/en-us/sysinternals/downloads/
+* TCPView: https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
 
