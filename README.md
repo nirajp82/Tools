@@ -9,4 +9,10 @@ Worker Process Crash & Debug
 * PSPing: https://learn.microsoft.com/en-us/sysinternals/downloads/psping (PsPing implements Ping functionality, TCP ping, latency and bandwidth measurement.)
 * Sysinternals: https://learn.microsoft.com/en-us/sysinternals/downloads/
 * TCPView: https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview
+* https://learn.microsoft.com/en-us/sysinternals/downloads/procdump
+* https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
+* https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+* http://windbg.info/doc/1-common-cmds.html
+* DebugDiag Tool
+* https://michaelscodingspot.com/how-to-create-use-and-debug-net-application-crash-dumps-in-2019/
 
