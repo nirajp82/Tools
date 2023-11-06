@@ -18,6 +18,9 @@ Analyzing memory dumps for .NET applications can be a complex task, but it's cru
       - https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
       - [https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
       - https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+      - http://windbg.info/doc/1-common-cmds.html
+      - DebugDiag Tool
+
    - Launch WinDbg and load the memory dump file:
      ```
      File -> Open Crash Dump -> [Select Your Dump File]
