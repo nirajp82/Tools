@@ -16,4 +16,5 @@ Worker Process Crash & Debug
 * DebugDiag Tool
 * https://michaelscodingspot.com/how-to-create-use-and-debug-net-application-crash-dumps-in-2019/
 * The dotnet-gcdump global tool collects GC (Garbage Collector) dumps of live .NET processes using EventPipe. https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-gcdump
+* RedisInsight
 
