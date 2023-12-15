@@ -1,16 +1,30 @@
+Certainly! Let's add specific details on how to use each tool to the original content:
+
 ### 1. **WINDBG:**
    - **Description:** WINDBG is a powerful debugger for Windows. It is commonly used for debugging native Windows applications and can also be used for debugging .NET applications.
-   - **Example Usage:** You can use WINDBG to analyze crash dumps, inspect memory, and debug issues in both native and managed code.
-   - **Download Link:** [WinDbg Downloads](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools)
+   - **Example Usage:**
+     - Install WINDBG from [WinDbg Downloads](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools).
+     - Open a crash dump file:
+       ```bash
+       windbg -z C:\Path\To\Your\CrashDump.dmp
+       ```
+     - Analyze the crash dump using WINDBG commands. For example, use `!analyze -v` to get an automated analysis.
 
 ### 2. **SOSEX:**
    - **Description:** SOSEX is an extension for WINDBG that provides additional commands specifically designed for debugging managed .NET code.
-   - **Example Usage:** It enhances the debugging experience for .NET applications by adding commands related to object exploration, synchronization, and more.
-   - **Download Link:** [SOSEX Extension](https://github.com/Microsoft/SOSEX)
+   - **Example Usage:**
+     - Download SOSEX from [SOSEX Extension](https://github.com/Microsoft/SOSEX).
+     - Load SOSEX in WINDBG:
+       ```bash
+       .load path\to\sosex.dll
+       ```
+     - Use SOSEX commands. For example, `!mk` for viewing managed stack frames.
 
 ### 3. **Debugging .NET Crash Dumps with WINDBG:**
-   - **Tutorial:** The provided link explains how to use WINDBG to analyze .NET crash dumps. It covers basic commands and debugging techniques.
-   - **Link:** [Using WINDBG to Analyze .NET Crash Dumps](https://stackify.com/using-windbg-to-analyze-net-crash-dumps-async-crash/)
+   - **Description:** The provided link explains how to use WINDBG to analyze .NET crash dumps. It covers basic commands and debugging techniques.
+   - **Example Usage:**
+     - Follow the tutorial [Using WINDBG to Analyze .NET Crash Dumps](https://stackify.com/using-windbg-to-analyze-net-crash-dumps-async-crash/).
+     - Learn how to load symbols, analyze call stacks, and identify issues in a .NET crash dump.
 
 ### 4. **Troubleshooting w3wp.exe Crash with WINDBG:**
    - **Tutorial:** This link provides guidance on troubleshooting crashes of the w3wp.exe process, which is the IIS worker process for hosting .NET applications.
@@ -26,15 +40,35 @@
 
 ### 7. **PSTools:**
    - **Description:** PSTools is a suite of command-line utilities that facilitate various system administration tasks, including remote process management.
-   - **Download Link:** [PSTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools)
+   - **Example Usage:**
+     - Download PSTools from [PSTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools).
+     - Use PsExec to run a command on a remote machine:
+       ```bash
+       psexec \\RemoteMachine -u UserName -p Password Command
+       ```
+     - For example, open a remote command prompt:
+       ```bash
+       psexec \\RemoteMachine cmd
+       ```
 
 ### 8. **TCPView:**
    - **Description:** TCPView is a sysinternals tool that provides a real-time display of active TCP and UDP connections on your system.
-   - **Download Link:** [TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview)
+   - **Example Usage:**
+     - Download TCPView from [TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview).
+     - Run TCPView to see active TCP and UDP connections on your system.
 
 ### 9. **Procdump:**
    - **Description:** Procdump is a sysinternals tool that can create crash dumps of processes based on various criteria, such as CPU usage or specific exceptions.
-   - **Download Link:** [Procdump](https://learn.microsoft.com/en-us/sysinternals/downloads/procdump)
+   - **Example Usage:**
+     - Download Procdump from [Procdump](https://learn.microsoft.com/en-us/sysinternals/downloads/procdump).
+     - Create a crash dump when a process crashes:
+       ```bash
+       procdump -e -ma YourProcess.exe
+       ```
+     - Monitor CPU usage and create a dump when it exceeds 90%:
+       ```bash
+       procdump -c 90 -ma YourProcess.exe
+       ```
 
 ### 10. **DebugDiag Tool:**
    - **Description:** DebugDiag is a tool designed to assist in troubleshooting issues such as crashes, hangs, and memory leaks in Windows applications.
@@ -64,11 +98,4 @@
    - **Tutorial:** The link provides a guide on creating, using, and debugging .NET application crash dumps in 2019.
    - **Link:** [How to Create, Use, and Debug .NET Application Crash Dumps](https://michaelscodingspot.com/how-to-create-use-and-debug-net-application-crash-dumps-in-2019/)
 
-   - Worker Process Crash & Debug 
-
-* PSTools: https://learn.microsoft.com/en-us/sysinternals/downloads/pstools 
-* Sysinternals: https://learn.microsoft.com/en-us/sysinternals/downloads/
-* https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
-* https://michaelscodingspot.com/how-to-create-use-and-debug-net-application-crash-dumps-in-2019/
-
-These tools and resources cover a wide range of debugging and troubleshooting scenarios on the Windows platform, particularly in the context of .NET applications, system administration, and network diagnostics.
+These examples provide a starting point for using these tools. Depending on your specific scenario, you may need to adjust commands and options. Always refer to the official documentation for each tool for comprehensive guidance.
