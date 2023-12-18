@@ -90,6 +90,10 @@ Certainly! Let's add specific details on how to use each tool to the original co
    - **Description:** PsPing is a sysinternals tool that implements ping functionality along with TCP ping, latency, and bandwidth measurement.
    - **Link:** [PsPing](https://learn.microsoft.com/en-us/sysinternals/downloads/psping)
 
+### 15. **Windirstat:**
+   - **Description:** WinDirStat is a handy tool for managing disk space efficiently, especially when you need to identify and eliminate large or unnecessary files that may be taking up valuable storage space on your Windows computer.
+   - **Link:** [Windirstat](https://windirstat.net/download.html)
+
 ### 15. **Additional Resources:**
    - **WinDbg Commands Reference:** [Common WinDbg Commands](http://windbg.info/doc/1-common-cmds.html)
    - **Windows Debugger Documentation:** [Windows Debugger Documentation](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
