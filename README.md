@@ -102,4 +102,11 @@ Certainly! Let's add specific details on how to use each tool to the original co
    - **Tutorial:** The link provides a guide on creating, using, and debugging .NET application crash dumps in 2019.
    - **Link:** [How to Create, Use, and Debug .NET Application Crash Dumps](https://michaelscodingspot.com/how-to-create-use-and-debug-net-application-crash-dumps-in-2019/)
 
+### 17. **AsmSpy**
+   - AsmSpy is a command-line tool used in .NET development to analyze dependencies and references between assemblies within a .NET application. It helps developers understand the structure of their applications, identify unused dependencies, and manage assembly compatibility and versioning. AsmSpy generates detailed reports outlining assembly names, versions, and referenced types and members, aiding in optimizing application performance and reducing deployment package size. With its command-line interface, AsmSpy integrates easily into automated build processes and development workflows, making it a valuable tool for .NET developers.
+
+### 18. **DotPeek**
+   - DotPeek is a free .NET decompiler and assembly browser developed by JetBrains. It allows developers to decompile .NET assemblies into readable C# or VB.NET code, explore assembly contents, navigate and search through code, customize decompiler options, integrate with Visual Studio, export decompiled code, and analyze code for potential issues. DotPeek supports multiple .NET Framework versions and is a valuable tool for developers to explore and understand .NET applications and libraries.
+
+
 These examples provide a starting point for using these tools. Depending on your specific scenario, you may need to adjust commands and options. Always refer to the official documentation for each tool for comprehensive guidance.
