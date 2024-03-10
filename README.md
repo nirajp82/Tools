@@ -1,5 +1,3 @@
-Certainly! Let's add specific details on how to use each tool to the original content:
-
 ### 1. **WINDBG:**
    - **Description:** WINDBG is a powerful debugger for Windows. It is commonly used for debugging native Windows applications and can also be used for debugging .NET applications.
    - **Example Usage:**
@@ -104,6 +102,15 @@ Certainly! Let's add specific details on how to use each tool to the original co
 
 ### 17. **AsmSpy**
    - AsmSpy is a command-line tool used in .NET development to analyze dependencies and references between assemblies within a .NET application. It helps developers understand the structure of their applications, identify unused dependencies, and manage assembly compatibility and versioning. AsmSpy generates detailed reports outlining assembly names, versions, and referenced types and members, aiding in optimizing application performance and reducing deployment package size. With its command-line interface, AsmSpy integrates easily into automated build processes and development workflows, making it a valuable tool for .NET developers.
+
+### 18: 
+```sh
+dotnet dev-certs https --trust
+```
+ - This command generates a development certificate and installs it into the trusted certificate store on your system.
+ - To establish trust for HTTPS connections in .NET Core applications during development, you can use the dotnet dev-certs command-line tool. This tool helps generate and manage development certificates. Here's how you can use it to trust the HTTPS certificate.
+ - Trust the Certificate: The --trust option automatically trusts the generated certificate. This means that when you run your .NET Core application with HTTPS enabled, the application will use this certificate, and your browser or HTTP client will trust it.
+
 
 ### 18. **DotPeek**
    - DotPeek is a free .NET decompiler and assembly browser developed by JetBrains. It allows developers to decompile .NET assemblies into readable C# or VB.NET code, explore assembly contents, navigate and search through code, customize decompiler options, integrate with Visual Studio, export decompiled code, and analyze code for potential issues. DotPeek supports multiple .NET Framework versions and is a valuable tool for developers to explore and understand .NET applications and libraries.
