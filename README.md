@@ -114,4 +114,10 @@ dotnet dev-certs https --trust
  - To establish trust for HTTPS connections in .NET Core applications during development, you can use the dotnet dev-certs command-line tool. This tool helps generate and manage development certificates. Here's how you can use it to trust the HTTPS certificate.
  - Trust the Certificate: The --trust option automatically trusts the generated certificate. This means that when you run your .NET Core application with HTTPS enabled, the application will use this certificate, and your browser or HTTP client will trust it.
 
+### 20: https://jsonplaceholder.typicode.com/
+Free fake and reliable API for testing and prototyping.
+
+
+https://github.com/nirajp82/References
+
 These examples provide a starting point for using these tools. Depending on your specific scenario, you may need to adjust commands and options. Always refer to the official documentation for each tool for comprehensive guidance.
