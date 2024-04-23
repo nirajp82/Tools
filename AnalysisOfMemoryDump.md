@@ -8,6 +8,7 @@ Analyzing memory dumps for .NET applications can be a complex task, but it's cru
 
 #### 1. **Capture a Memory Dump:**
    - You can capture a memory dump using tools like Task Manager, Process Explorer, or by using `procdump` utility.
+   - https://kb.acronis.com/content/38195?ckattempt=1
    - For example, using `procdump`: 
      ```
      procdump -e -ma YourAppName.exe
