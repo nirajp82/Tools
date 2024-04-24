@@ -49,22 +49,22 @@ This readme provides instructions for configuring Windows Error Reporting to col
 - Use this information at your own risk. We are not responsible for any damage caused by improper use of the Registry Editor or misconfiguration of Windows Error Reporting settings.
 
 Reference: https://kb.acronis.com/content/38195?ckattempt=2
-Open the Windows registry editor: Hit Win-R and type in regedit
-Navigate to following key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting
-(optional) Back up Windows Error Reporting key as a precaution: right-click the Windows Error Reporting key, select Export and save the .reg file in a safe location.
-Select the Windows Error Reporting key and create a new key named LocalDumps if it is not there already;
-In LocalDumps key, create three registry values as mentioned below:
-DumpFolder Registry Value
-Right click in the blank area on the right side and select New > Expandable String Value
-Name it as DumpFolder
-Double click it and enter %LOCALAPPDATA%\CrashDumps in the Value data field
-DumpCount Registry Value
-Right click in the blank area on the right side and select New > DWORD (32-bit) value
-Name it as DumpCount
-Double click it and enter 10 in the Value data field
-DumpType Registry Value
-Right click in the blank area on the right side and select New > DWORD (32-bit) value
-Name it as DumpType
-Double click it and enter 2 in the Value data field
-Reproduce the crash of the software and collect the related .dmp file with the software name
+* Open the Windows registry editor: Hit Win-R and type in regedit
+* Navigate to following key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting
+* (optional) Back up Windows Error Reporting key as a precaution: right-click the Windows Error Reporting key, select Export and save the .reg file in a safe location.
+* Select the Windows Error Reporting key and create a new key named LocalDumps if it is not there already;
+* In LocalDumps key, create three registry values as mentioned below:
+* DumpFolder Registry Value
+* Right click in the blank area on the right side and select New > Expandable String Value
+* Name it as DumpFolder
+* Double click it and enter %LOCALAPPDATA%\CrashDumps in the Value data field
+* DumpCount Registry Value
+* Right click in the blank area on the right side and select New > DWORD (32-bit) value
+* Name it as DumpCount
+* Double click it and enter 10 in the Value data field
+* DumpType Registry Value
+* Right click in the blank area on the right side and select New > DWORD (32-bit) value
+* Name it as DumpType
+* Double click it and enter 2 in the Value data field
+* Reproduce the crash of the software and collect the related .dmp file with the software name
 
