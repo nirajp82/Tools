@@ -117,6 +117,8 @@ dotnet dev-certs https --trust
 ### 20: https://jsonplaceholder.typicode.com/
 Free fake and reliable API for testing and prototyping.
 
+### 21: https://www.ssllabs.com/ssltest/analyze.htm
+  - SSL Labs provides a detailed assessment of a website's SSL/TLS setup, including information about certificate validity, supported protocols, cipher suites, and security vulnerabilities.
 
 https://github.com/nirajp82/References
 
