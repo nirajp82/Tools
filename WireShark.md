@@ -195,22 +195,36 @@ Shift+Tab** | Move between screen elements (e.g., from the toolbar to the packet
 
 Wireshark supports a variety of protocols that can be filtered using their protocol names. Here is a list of common protocol values:
 
-| **Protocol** |
-|--------------|
-| **ether**    |
-| **fddi**     |
-| **ip**       |
-| **arp**      |
-| **rarp**     |
-| **decnet**   |
-| **lat**      |
-| **sca**      |
-| **moprc**    |
-| **mopdl**    |
-| **tcp**      |
-| **udp**      |
+---
 
-These protocols represent different types of traffic that can be filtered during packet capture or analysis.
+## Protocols - Values
+
+| **Protocol** | **Description** | **When it's Used** | **Key Features** |
+|--------------|-----------------|--------------------|------------------|
+| **ether**    | **Ethernet** - A widely used Layer 2 protocol for wired networking. | Used in most local area networks (LANs) and data center environments. | - Standard for wired networking in homes and businesses.<br> - Frames encapsulate data for network communication.<br> - Supports IPv4 and IPv6 addressing.<br> - Uses MAC addresses for device identification. |
+| **fddi**     | **Fiber Distributed Data Interface** - A high-speed (100 Mbps) network protocol designed for fiber-optic backbone networks. | Used in large enterprise networks for interconnecting routers, switches, and other devices in a backbone network (less common now). | - Operates on fiber-optic cables for high-speed communication.<br> - Uses a token-passing ring topology for fault tolerance.<br> - Primarily used for backbone networks and metropolitan area networks (MANs). |
+| **ip**       | **Internet Protocol** - A Layer 3 (Network Layer) protocol responsible for addressing and routing packets across networks. | Used in nearly all IP-based communications over the internet and intranets. | - Core protocol for communication over the internet.<br> - Provides addressing (IP addresses) and routing of packets.<br> - Supports both IPv4 and IPv6.<br> - Divided into two versions: IPv4 (32-bit) and IPv6 (128-bit). |
+| **arp**      | **Address Resolution Protocol** - A Layer 2 protocol used to map an IP address to a MAC address. | Used within a local network to map 32-bit IP addresses to 48-bit MAC addresses. | - Resolves IP addresses to MAC addresses in Ethernet networks.<br> - Used by devices when they need to communicate within the same network.<br> - Operates only in local network segments (LANs). |
+| **rarp**     | **Reverse Address Resolution Protocol** - A Layer 2 protocol used to map a MAC address to an IP address. | Used in legacy systems, mainly by diskless workstations, to discover their IP address based on their MAC address. | - Reverse of ARP; it was used in legacy systems but is largely obsolete now.<br> - Useful in environments where devices don’t have persistent storage. |
+| **decnet**   | **DECnet** - A proprietary protocol suite developed by Digital Equipment Corporation for interconnecting their devices. | Used in older DEC (Digital Equipment Corporation) systems and networks, typically in the 1970s and 1980s. | - Used primarily in DEC computer systems for network communication.<br> - Operated on various physical media, including Ethernet.<br> - Largely obsolete, replaced by TCP/IP in most networks. |
+| **lat**      | **LAT (Local Area Transport)** - A protocol developed by Digital Equipment Corporation for remote terminal and application access within a LAN. | Used in older DEC VAX systems and terminals for remote access within a LAN. | - Supports terminal-to-host communication in LAN environments.<br> - Primarily used with DEC’s proprietary hardware and software.<br> - Obsolete, replaced by modern protocols like SSH and RDP. |
+| **sca**      | **SCA (Serial Control and Alarm)** - A protocol used for managing serial communications in control systems. | Primarily used in industrial and control systems for serial communication and alarm management. | - Used in industrial systems and control applications for managing serial communication.<br> - Often found in legacy systems. |
+| **moprc**    | **MOP (Maintenance Operations Protocol)** - A protocol used for remote diagnostics and maintenance of Digital Equipment Corporation (DEC) systems. | Used in DEC systems for network maintenance and diagnostics. | - Primarily used in DECnet environments.<br> - Allows for remote management and troubleshooting of DEC devices.<br> - Largely obsolete in modern networks. |
+| **mopdl**    | **MOPDL (Maintenance Operations Protocol Download)** - A variation of MOP used for downloading operating system files to DEC systems. | Used in legacy DECnet systems for OS downloads to devices. | - Part of DEC’s maintenance protocol suite.<br> - Helps in downloading software or configurations to DEC devices.<br> - Obsolete in modern networks. |
+| **tcp**      | **Transmission Control Protocol** - A Layer 4 (Transport Layer) protocol providing reliable, ordered, and error-checked delivery of data between applications. | Used for most internet communication (e.g., web browsing, email, file transfer). | - Ensures reliable communication with error checking and retransmission of lost packets.<br> - Provides ordered delivery of data packets.<br> - Commonly used with IP (together known as TCP/IP). |
+| **udp**      | **User Datagram Protocol** - A Layer 4 (Transport Layer) protocol providing low-latency, connectionless communication without guaranteed delivery. | Used in applications where speed is critical and data loss is acceptable (e.g., video streaming, VoIP). | - Faster than TCP due to lack of overhead for error checking and retransmission.<br> - Often used for real-time applications such as streaming and gaming.<br> - Does not guarantee packet delivery or order. |
+
+---
+
+### Summary of Key Points:
+
+- **Ethernet** is the most common Layer 2 protocol for wired networks.
+- **FDDI** was historically used for high-speed backbone networks but has mostly been replaced by Ethernet.
+- **IP** is the core protocol of the internet and is used to route packets between devices.
+- **ARP** is crucial for mapping IP addresses to MAC addresses in a local network.
+- **RARP** was once used for diskless workstations to obtain an IP address but is largely obsolete today.
+- **DECnet**, **LAT**, **MOP**, and their variants (**MOPRC**, **MOPDL**) were once proprietary protocols used in DEC systems, but they are now outdated and rarely used.
+- **TCP** is used for reliable, ordered communications in most applications, while **UDP** is used for fast, low-latency applications where speed is prioritized over reliability.
 
 ---
 
