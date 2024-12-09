@@ -1,7 +1,3 @@
-Certainly! Below is the full and detailed README file based on all the information and tables you've provided, with explanations and examples where necessary.
-
----
-
 # Wireshark Command/Cheatsheet
 
 This README provides an overview of essential Wireshark commands, filters, keyboard shortcuts, and more, helping you effectively capture, analyze, and troubleshoot network traffic.
