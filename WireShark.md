@@ -16,8 +16,7 @@ This README provides an overview of essential Wireshark commands, filters, keybo
 8. [Keyboard Shortcuts - Main Display Window](#keyboard-shortcuts---main-display-window)
 9. [Protocols - Values](#protocols---values)
 10. [Common Filtering Commands](#common-filtering-commands)
-
----
+11. [Special Operators](#Special-Operators)
 
 ## Default Columns in a Packet Capture Output
 
@@ -230,14 +229,6 @@ Wireshark supports a variety of protocols that can be filtered using their proto
 
 ## Common Filtering Commands
 
-These are some common commands used to filter packets in Wireshark:
-
-Certainly! Below is the table format for your **Wireshark filter examples**, including detailed descriptions for each filter:
-
----
-
-## Common Filtering Commands
-
 | **Usage**                          | **Filter Syntax**                                       | **Description**                                                                                                                                                     |
 |------------------------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Wireshark Filter by IP**         | `ip.addr == 10.10.50.1`                                 | Matches packets where the **IP address** (source or destination) is **10.10.50.1**. Useful for filtering traffic to or from a specific IP address.               |
@@ -260,13 +251,47 @@ Certainly! Below is the table format for your **Wireshark filter examples**, inc
 | **MAC Address Filter**             | `eth.addr == 00:70:f4:23:18:c4`                         | Filters packets where the **MAC address** is **00:70:f4:23:18:c4**. Useful for tracking traffic to or from a specific device on the local network.                 |
 | **RST Flag Filter**                | `tcp.flags.reset == 1`                                  | Filters packets where the **TCP RST (reset)** flag is set. Useful for detecting and analyzing connection resets in TCP communication.                             |
 
----
 
 ### Summary:
 
 This table provides a collection of common Wireshark display filters that can be used to refine your analysis based on specific criteria, such as IP addresses, ports, protocols, flags, and other packet attributes. Each filter is designed for a different use case, whether you are investigating a particular IP, analyzing traffic on specific ports, filtering out certain types of traffic, or capturing connection handshakes. 
 
 These filters can help you narrow down large capture files, making it easier to focus on relevant packets and identify potential network issues.
+---
+# Special Operators
+
+| **Operator**   | **Description**                                                                                                                                   | **Example**                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| **contains**   | Filters packets by checking if a field contains a specific string (case-sensitive). It searches the entire frame, not limited to a protocol.     | `frame contains "Google"`                              |
+| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | `http.host matches "(\\.org|\\.com|\\.net)"`            |
+| **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80 443}` or `tcp.port in [80-443]`       |
+
+## Examples
+
+| **Operator**   | **Example Usage**                                                                                                                                           |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                   |
+|                | `frame contains "Google"`                                                                                                                                  |
+| **matches**    | To filter HTTP host headers that end with `.org`, `.com`, or `.net` (case-insensitive):                                                                   |
+|                | `http.host matches "(\\.org|\\.com|\\.net)"`                                                                                                                 |
+| **in**         | To filter packets with TCP ports 80 or 443, or any port between 80 and 443:                                                                                |
+|                | `tcp.port in {80 443}`                                                                                                                                     |
+|                | `tcp.port in [80-443]`                                                                                                                                     |
+
+## Notes
+| **Operator**   | **Details**                                                                                                      |
+|----------------|------------------------------------------------------------------------------------------------------------------|
+| **contains**   | Case-sensitive and matches exact strings.                                                                         |
+| **matches**    | Case-insensitive and supports regular expressions (Perl-compatible).                                             |
+| **in**         | Checks if a field’s value is in a specified list or a defined range.                                              |
+
+## Summary of Operators
+
+| **Operator**   | **Purpose**                                                     |
+|----------------|---------------------------------------------------------------|
+| **contains**   | Exact string match, case-sensitive.                            |
+| **matches**    | Regular expression match, case-insensitive.                   |
+| **in**         | Matches if a value is in a specified list or range.            |
 
 ---
 
