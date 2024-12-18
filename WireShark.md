@@ -263,8 +263,9 @@ These filters can help you narrow down large capture files, making it easier to 
 | **Operator**   | **Description**                                                                                                                                   | **Example**                                            |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
 | **contains**   | Filters packets by checking if a field contains a specific string (case-sensitive). It searches the entire frame, not limited to a protocol.     | `frame contains "Google"`                              |
-| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | `http.host matches "\.(org|com|net)"`             |
-| **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80 443}` or `tcp.port in [80-443]`       |
+| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | ` http.request.uri matches "gl=se$" `
+` or frame mathes "Admin"            |
+| **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80, 443, 8000..8004}` `http.request.method in {GET, POST}`       |
 
 ## Examples
 
@@ -272,11 +273,11 @@ These filters can help you narrow down large capture files, making it easier to 
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                   |
 |                | `frame contains "Google"`                                                                                                                                  |
-| **matches**    | To filter HTTP host headers that end with `.org`, `.com`, or `.net` (case-insensitive):                                                                   |
-|                | `http.host matches "\.(org|com|net)"`                                                                                                                |
-| **in**         | To filter packets with TCP ports 80 or 443, or any port between 80 and 443:                                                                                |
-|                | `tcp.port in {80 443}`                                                                                                                                     |
-|                | `tcp.port in [80-443]`                                                                                                                                     |
+| **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se":                                                                   |
+|                | `  http.request.uri matches "gl=se$" `                                                                                                               |
+| **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                |
+|                | `tcp.port in {80, 443, 8000..8004}`                                                                                                                                     |
+|                |                                                                                                                                   |
 
 ## Notes
 | **Operator**   | **Details**                                                                                                      |
