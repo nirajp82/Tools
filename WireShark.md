@@ -263,7 +263,7 @@ These filters can help you narrow down large capture files, making it easier to 
 | **Operator**   | **Description**                                                                                                                                   | **Example**                                            |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
 | **contains**   | Filters packets by checking if a field contains a specific string (case-sensitive). It searches the entire frame, not limited to a protocol.     | `frame contains "Google"`                              |
-| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | `http.host matches "(\\.org|\\.com|\\.net)"`            |
+| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | `http.host matches "(\.org|\ .com|\ .net)"`             |
 | **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80 443}` or `tcp.port in [80-443]`       |
 
 ## Examples
