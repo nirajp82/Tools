@@ -313,3 +313,5 @@ For more detailed information, refer to the official Wireshark documentation: [W
 Reference: 
 https://www.stationx.net/wireshark-cheat-sheet/
 https://scadahacker.com/library/Documents/Cheat_Sheets/Networking%20-%20Wireshark%20-%20Display%20Filters%201.pdf
+
+ ![image](https://github.com/user-attachments/assets/b498e5fd-c9ae-4a2c-9bc8-d1f6fe542ee3)
