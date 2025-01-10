@@ -277,30 +277,29 @@ These filters can help you narrow down large capture files, making it easier to 
 
 ## Examples
 
-| **Operator**   | **Example Usage**                                                                                                                                           |
+| **Operator**   | **Example Usage**                                                                                                                                          |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                   |
+| **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                    |
 |                | `frame contains "Google"`                                                                                                                                  |
-| **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se":                                                                   |
-|                | `  http.request.uri matches "gl=se$" `                                                                                                               |
-| **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                |
-|                | `tcp.port in {80, 443, 8000..8004}`                                                                                                                                     |
-|                |                                                                                                                                   |
+| **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se":  `http.request.uri matches "gl=se$" `                                 |
+|                | Matches DNS queries where the domain name ends with .com, .co.uk, or .org.:           `dns.qry.name matches "\\.(com|co.uk|org)$"`                         |
+| **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                        |
+|                | `tcp.port in {80, 443, 8000..8004}`                                                                                                                        |
+|                |                                                                                                                                                            |
 
 ## Notes
 | **Operator**   | **Details**                                                                                                      |
 |----------------|------------------------------------------------------------------------------------------------------------------|
-| **contains**   | Case-sensitive and matches exact strings.                                                                         |
+| **contains**   | Case-sensitive and matches exact strings.                                                                        |
 | **matches**    | Case-insensitive and supports regular expressions (Perl-compatible).                                             |
-| **in**         | Checks if a field’s value is in a specified list or a defined range.                                              |
+| **in**         | Checks if a field’s value is in a specified list or a defined range.                                             |
 
 ## Summary of Operators
-
 | **Operator**   | **Purpose**                                                     |
-|----------------|---------------------------------------------------------------|
-| **contains**   | Exact string match, case-sensitive.                            |
-| **matches**    | Regular expression match, case-insensitive.                   |
-| **in**         | Matches if a value is in a specified list or range.            |
+|----------------|-----------------------------------------------------------------|
+| **contains**   | Exact string match, case-sensitive.                             |
+| **matches**    | Regular expression match, case-insensitive.                     |
+| **in**         | Matches if a value is in a specified list or range.             |
 
 ---
 
