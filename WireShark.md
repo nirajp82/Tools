@@ -282,7 +282,7 @@ These filters can help you narrow down large capture files, making it easier to 
 | **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                    |
 |                | `frame contains "Google"`                                                                                                                                  |
 | **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se":  `http.request.uri matches "gl=se$" `                                 |
-|                | Matches DNS queries where the domain name ends with .com, .co.uk, or .org.:           `dns.qry.name matches "\\.(com|co.uk|org)$"`                         |
+|                | Matches DNS queries where the domain name ends with `.com`, `.co.uk`, or `.org`: dns.qry.name matches "\.(com|co.uk|org)$"                         |
 | **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                        |
 |                | `tcp.port in {80, 443, 8000..8004}`                                                                                                                        |
 |                |                                                                                                                                                            |
