@@ -262,6 +262,45 @@ Ah, I understand now! You want the "Notes on Common Usage" to be incorporated in
 | **MAC Address Filter**             | `eth.addr == 00:70:f4:23:18:c4`                         | Filters packets where the **MAC address** is **00:70:f4:23:18:c4**. Useful for tracking traffic to or from a specific device on the local network.                 |
 | **RST Flag Filter**                | `tcp.flags.reset == 1`                                  | Filters packets where the **TCP RST (reset)** flag is set. Useful for detecting and analyzing connection resets in TCP communication.                             |
 
+# Special Operators
+
+| **Operator**   | **Description**                                                                                                                                   | **Example**                                            |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| **contains**   | Filters packets by checking if a field contains a specific string (case-sensitive). It searches the entire frame, not limited to a protocol.     | `frame contains "Google"`                              |
+| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | ` http.request.uri matches "gl=se$" ` or `frame mathes "Admin" ` or `dns matches "udemy"` |
+| **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80, 443, 8000..8004}` `http.request.method in {GET, POST}`       |
+
+## Examples
+
+| **Operator**   | **Example Usage**                                                                                                                                          |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                    |
+|                | `frame contains "Google"`                                                                                                                                  |
+| **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se": |
+|                | `http.request.uri matches "gl=se$" `                                 |
+|                | Matches DNS queries where the domain name ends with `.com`, `.co.uk`, or `.org`:  \\.(com|co.uk|org)$|
+|                | ``dns.qry.name matches  "\\.(com|co.uk|org)$"`  `                                 |
+| **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                        |
+|                |  tcp.port in {80, 443, 8000..8004} |
+|                | Matches TLS handshake types 1 (Client Hello) or 2 (Server Hello): |
+|                | `tls.handshake.type in {1,2}`                                                                          |
+
+## Notes
+| **Operator**   | **Details**                                                                                                      |
+|----------------|------------------------------------------------------------------------------------------------------------------|
+| **contains**   | Case-sensitive and matches exact strings.                                                                        |
+| **matches**    | Case-insensitive and supports regular expressions (Perl-compatible).                                             |
+| **in**         | Checks if a field’s value is in a specified list or a defined range.                                             |
+
+## Summary of Operators
+| **Operator**   | **Purpose**                                                     |
+|----------------|-----------------------------------------------------------------|
+| **contains**   | Exact string match, case-sensitive.                             |
+| **matches**    | Regular expression match, case-insensitive.                     |
+| **in**         | Matches if a value is in a specified list or range.             |
+
+---
+
 ### # Wireshark Packet Analysis - Filters and Answers
 
 This document covers various Wireshark packet filters and the corresponding answers to questions related to packet analysis.
@@ -359,60 +398,10 @@ This filter captures packets that have both the SYN and ACK flags set, indicatin
 
 ---
 
-
-### Summary:
-
-This table provides a collection of common Wireshark display filters that can be used to refine your analysis based on specific criteria, such as IP addresses, ports, protocols, flags, and other packet attributes. Each filter is designed for a different use case, whether you are investigating a particular IP, analyzing traffic on specific ports, filtering out certain types of traffic, or capturing connection handshakes. 
-
-These filters can help you narrow down large capture files, making it easier to focus on relevant packets and identify potential network issues.
----
-# Special Operators
-
-| **Operator**   | **Description**                                                                                                                                   | **Example**                                            |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
-| **contains**   | Filters packets by checking if a field contains a specific string (case-sensitive). It searches the entire frame, not limited to a protocol.     | `frame contains "Google"`                              |
-| **matches**    | Allows filtering using regular expressions (case-insensitive). It’s useful for more flexible string matching, such as domain names or patterns. | ` http.request.uri matches "gl=se$" ` or `frame mathes "Admin" ` or `dns matches "udemy"` |
-| **in**         | Checks if a field value is within a specified set or range of values. It is useful for filtering multiple values or ranges in a field.           | `tcp.port in {80, 443, 8000..8004}` `http.request.method in {GET, POST}`       |
-
-## Examples
-
-| **Operator**   | **Example Usage**                                                                                                                                          |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **contains**   | To filter frames containing the string "Google" anywhere in the packet:                                                                                    |
-|                | `frame contains "Google"`                                                                                                                                  |
-| **matches**    | Match HTTP requests where the last characters in the uri are the characters "gl=se": |
-|                | `http.request.uri matches "gl=se$" `                                 |
-|                | Matches DNS queries where the domain name ends with `.com`, `.co.uk`, or `.org`:  \\.(com|co.uk|org)$|
-|                | ``dns.qry.name matches  "\\.(com|co.uk|org)$"`  `                                 |
-| **in**         | To filter packets with TCP ports 80 or 443 or between 8000 to 8004:                                                                                        |
-|                |  tcp.port in {80, 443, 8000..8004} |
-|                | Matches TLS handshake types 1 (Client Hello) or 2 (Server Hello): |
-|                | `tls.handshake.type in {1,2}`                                                                          |
-
-## Notes
-| **Operator**   | **Details**                                                                                                      |
-|----------------|------------------------------------------------------------------------------------------------------------------|
-| **contains**   | Case-sensitive and matches exact strings.                                                                        |
-| **matches**    | Case-insensitive and supports regular expressions (Perl-compatible).                                             |
-| **in**         | Checks if a field’s value is in a specified list or a defined range.                                             |
-
-## Summary of Operators
-| **Operator**   | **Purpose**                                                     |
-|----------------|-----------------------------------------------------------------|
-| **contains**   | Exact string match, case-sensitive.                             |
-| **matches**    | Regular expression match, case-insensitive.                     |
-| **in**         | Matches if a value is in a specified list or range.             |
-
----
-
-## Conclusion
-
-Wireshark is an incredibly powerful tool for network traffic analysis. Understanding how to use capture and display filters, logical operators, and protocols can significantly enhance your ability to troubleshoot and analyze network traffic effectively. This guide should help you navigate through the most commonly used commands and concepts in Wireshark.
-
-For more detailed information, refer to the official Wireshark documentation: [Wireshark Documentation](https://www.wireshark.org/docs/).
-
 Reference: 
 https://www.stationx.net/wireshark-cheat-sheet/
 https://scadahacker.com/library/Documents/Cheat_Sheets/Networking%20-%20Wireshark%20-%20Display%20Filters%201.pdf
+https://www.udemy.com/course/wireshark-ultimate-hands-on-course
+
 
  ![image](https://github.com/user-attachments/assets/b498e5fd-c9ae-4a2c-9bc8-d1f6fe542ee3)
