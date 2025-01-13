@@ -314,9 +314,11 @@ This will give you a summary of the top IP conversations sorted by the number of
 
 ## 7. What is the Stream ID? Build a Filter for This Stream and Apply It.
 To find the stream ID:
-1. Look at the **Stream ID** field in the packet details pane.
-2. Use the filter: `tcp.stream == <Stream ID>` (replace `<Stream ID>` with the actual value).
-
+1. Go to **Statistics** menu.
+2. Choose **Conversations**.
+3. Select the **IPv4** tab.
+4. Sort by **Packets**. -> Right click -> Apply as filter -> Selected -> Filter on Stream Id
+   
 ---
 
 ## 8. In This Stream, How Many Packets Are Larger Than 100 Bytes?
