@@ -17,6 +17,8 @@ This README provides an overview of essential Wireshark commands, filters, keybo
 9. [Protocols - Values](#protocols---values)
 10. [Common Filtering Commands](#common-filtering-commands)
 11. [Special Operators](#Special-Operators)
+12. [Wireshark Packet Analysis - Filters and Answers](#wireshark-packet-analysis---filters-and-answers)
+
 
 ## Default Columns in a Packet Capture Output
 
@@ -259,6 +261,101 @@ Ah, I understand now! You want the "Notes on Common Usage" to be incorporated in
 | **Host Name Filter**               | `ip.host == "hostname"`                                   | Filters packets where the **host** matches **hostname**. Useful for filtering traffic to or from a specific device identified by its hostname.                      |
 | **MAC Address Filter**             | `eth.addr == 00:70:f4:23:18:c4`                         | Filters packets where the **MAC address** is **00:70:f4:23:18:c4**. Useful for tracking traffic to or from a specific device on the local network.                 |
 | **RST Flag Filter**                | `tcp.flags.reset == 1`                                  | Filters packets where the **TCP RST (reset)** flag is set. Useful for detecting and analyzing connection resets in TCP communication.                             |
+
+### # Wireshark Packet Analysis - Filters and Answers
+
+This document covers various Wireshark packet filters and the corresponding answers to questions related to packet analysis.
+
+## 1. Find DNS Packets (Only DNS, No ICMP)
+**Filter**: `dns and !icmp`
+
+This filter will display only DNS packets while excluding any ICMP packets.
+
+---
+
+## 2. DNS Packets Including the Word "Foundation" Regardless of Case
+**Filter**: `dns && frame matches "foundation"`
+
+This filter captures DNS packets that contain the word "Foundation" (case insensitive).
+
+---
+
+## 3. DNS Requests for Domains That Do Not Have the Word "Foundation"
+**Filter**: `dns && !dns matches "foundation"`
+
+This filter will show DNS requests for domains that do not contain the word "foundation."
+
+---
+
+## 4. ICMP Packets
+**Filter**: `icmp`
+
+This simple filter shows all ICMP packets in the capture.
+
+---
+
+## 5. Packets on TCP Port 443
+**Filter**: `tcp.port == 443`
+
+This filter will show all packets that use TCP port 443, which is commonly used for HTTPS traffic.
+
+---
+
+## 6. How Many Packets Are in the Top IP Conversation?
+**Steps**:
+1. Go to **Statistics** menu.
+2. Choose **Conversations**.
+3. Select the **IPv4** tab.
+4. Sort by **Packets**.
+
+This will give you a summary of the top IP conversations sorted by the number of packets exchanged.
+
+---
+
+## 7. What is the Stream ID? Build a Filter for This Stream and Apply It.
+To find the stream ID:
+1. Look at the **Stream ID** field in the packet details pane.
+2. Use the filter: `tcp.stream == <Stream ID>` (replace `<Stream ID>` with the actual value).
+
+---
+
+## 8. In This Stream, How Many Packets Are Larger Than 100 Bytes?
+**Filter**: `ip.stream eq 3 && frame.cap_len > 100`
+
+This filter counts packets in stream 3 where the packet size is greater than 100 bytes. Adjust the stream number as necessary.
+
+---
+
+## 9. How Many Packets in the PCAP Have the TCP SYN Bit Set to 1?
+**Filter**: `tcp.flags.syn == 1`
+
+### Note:
+- **SYN**: The client sends a packet with the SYN flag set to initiate a connection.
+- **SYN-ACK**: The server responds with a packet that has both SYN and ACK flags set.
+- **ACK**: The client acknowledges the server’s response with a packet containing the ACK flag.
+
+This filter identifies the packets where the SYN flag is set, indicating the initiation of a TCP connection.
+
+---
+
+## 10. How Many Packets Have the TCP Reset Bit Set to 1?
+**Filter**: `tcp.flags.reset == 1`
+
+### Note:
+When the **RST (Reset)** flag is set, it indicates that the TCP connection is being forcibly reset. This can occur in several scenarios:
+- **Connection refused**: If the server doesn’t want to establish a connection (e.g., because the port is closed).
+- **Connection termination**: If one side of the connection encounters an error or is in an abnormal state and wants to abruptly terminate the session.
+- **Protocol violations**: If there is an attempt to communicate on a connection that is already closed or not open.
+- **Unexpected data**: A device receives data for a connection that has not been established.
+
+---
+
+## 11. How Many Packets Have the TCP SYN-ACK Flags Set to 1?
+**Filter**: `tcp.flags.syn == 1 && tcp.flags.ack == 1`
+
+This filter captures packets that have both the SYN and ACK flags set, indicating a response from the server during the TCP 3-way handshake (SYN-ACK).
+
+---
 
 
 ### Summary:
