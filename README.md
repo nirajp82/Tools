@@ -120,6 +120,15 @@ Free fake and reliable API for testing and prototyping.
 ### 21: https://www.ssllabs.com/ssltest/analyze.htm
   - SSL Labs provides a detailed assessment of a website's SSL/TLS setup, including information about certificate validity, supported protocols, cipher suites, and security vulnerabilities.
 
+### 22: TraceRoute:
+   - [Traceroute](https://tools.keycdn.com/traceroute) -
+   - Traceroute, also called tracert, is a utility that uses ICMP packets to record the route through the internet from one computer to another. It calculates the time taken for each hop as the packet is routed to the destination. To guarantee accuracy, each hop is queried multiple times (in this case four times) to better measure the response of that particular hop.
+   -  https://tools.keycdn.com/traceroute: This tool is typically used to diagnose hiccups or interruptions in the transfer of data and pinpoint where along the chain it occurred. This IPv4 or IPv6 traceroute is unique in that it allows you to simultaneously test different locations at once. This lets you quickly determine if there is any packet loss or unexpected latency to the given IP or hostname. A CDN can help dramatically reduce latency by minimizing the distance between hops.
+
+
+
+ 
+
 https://github.com/nirajp82/References
 
 These examples provide a starting point for using these tools. Depending on your specific scenario, you may need to adjust commands and options. Always refer to the official documentation for each tool for comprehensive guidance.
