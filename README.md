@@ -125,6 +125,10 @@ Free fake and reliable API for testing and prototyping.
    - Traceroute, also called tracert, is a utility that uses ICMP packets to record the route through the internet from one computer to another. It calculates the time taken for each hop as the packet is routed to the destination. To guarantee accuracy, each hop is queried multiple times (in this case four times) to better measure the response of that particular hop.
    -  https://tools.keycdn.com/traceroute: This tool is typically used to diagnose hiccups or interruptions in the transfer of data and pinpoint where along the chain it occurred. This IPv4 or IPv6 traceroute is unique in that it allows you to simultaneously test different locations at once. This lets you quickly determine if there is any packet loss or unexpected latency to the given IP or hostname. A CDN can help dramatically reduce latency by minimizing the distance between hops.
 
+### 23: TNC: Displays diagnostic information for a connection. The command is essentially checking if your machine can establish a connection to the specified host using port. 
+   ```ps1
+      tnc ocsp.globalsign.com -Port 80
+   ```
 
 
  
