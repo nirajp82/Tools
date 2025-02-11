@@ -129,7 +129,7 @@ Free fake and reliable API for testing and prototyping.
    ```ps1
       tnc ocsp.globalsign.com -Port 80
    ```
-### 23 `certutil -urlcache` - It is used to **view or clear** the **certificate URL cache**. 
+### 23 `certutil -urlcache`
    - **View cache**: Shows the list of URLs of certificates and CRLs stored in the cache.
      ```bash
         certutil -urlcache
@@ -138,8 +138,6 @@ Free fake and reliable API for testing and prototyping.
      ```bash
         certutil -urlcache * delete
      ```
-
- 
 
 https://github.com/nirajp82/References
 
