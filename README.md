@@ -138,7 +138,7 @@ Free fake and reliable API for testing and prototyping.
      ```bash
         certutil -urlcache * delete
      ```
-
+### 24: glogg - the fast, smart log explorer
+   - https://glogg.bonnefon.org/index.html
 https://github.com/nirajp82/References
 
-These examples provide a starting point for using these tools. Depending on your specific scenario, you may need to adjust commands and options. Always refer to the official documentation for each tool for comprehensive guidance.
