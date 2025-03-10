@@ -142,3 +142,7 @@ Free fake and reliable API for testing and prototyping.
    - https://glogg.bonnefon.org/index.html
 https://github.com/nirajp82/References
 
+### 35: SSL (Cert Details) Checker
+   - https://www.ssl.org/report/github.com
+   - https://www.immuniweb.com/ssl/ 
+
