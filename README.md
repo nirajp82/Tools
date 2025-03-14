@@ -146,3 +146,5 @@ https://github.com/nirajp82/References
    - https://www.ssl.org/report/github.com
    - https://www.immuniweb.com/ssl/ 
 
+### 36: BenchmarkDotNet
+   - One of the most popular libraries for benchmarking in .NET is BenchmarkDotNet. This package allows you to run benchmarks and compare the performance of multiple methods in a standardized way, with detailed results.
