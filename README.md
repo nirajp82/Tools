@@ -103,10 +103,17 @@
 ### 17. **AsmSpy**
    - AsmSpy is a command-line tool used in .NET development to analyze dependencies and references between assemblies within a .NET application. It helps developers understand the structure of their applications, identify unused dependencies, and manage assembly compatibility and versioning. AsmSpy generates detailed reports outlining assembly names, versions, and referenced types and members, aiding in optimizing application performance and reducing deployment package size. With its command-line interface, AsmSpy integrates easily into automated build processes and development workflows, making it a valuable tool for .NET developers.
 
-### 18. **DotPeek**
+### 18. **ILSpy** ILSpy is a free and open-source .NET assembly decompiler and browser. It allows you to inspect and reverse-engineer .NET binaries (like .dll or .exe files), even if you don't have the original source code.
+
+### 19. **DotPeek**
    - DotPeek is a free .NET decompiler and assembly browser developed by JetBrains. It allows developers to decompile .NET assemblies into readable C# or VB.NET code, explore assembly contents, navigate and search through code, customize decompiler options, integrate with Visual Studio, export decompiled code, and analyze code for potential issues. DotPeek supports multiple .NET Framework versions and is a valuable tool for developers to explore and understand .NET applications and libraries.
 
-### 19: **dotnet dev-certs https --trust**
+   - * **ILSpy** – Lightweight, open-source, actively maintained.
+   - * **dotPeek (by JetBrains)** – Similar tool with richer UI and Rider integration.
+   - * **dnSpy** – Includes debugger and editor (less maintained now).
+   - * **JustDecompile (by Telerik)** – Another alternative with plugin support.
+
+### 20: **dotnet dev-certs https --trust**
 ```sh
 dotnet dev-certs https --trust
 ```
@@ -114,22 +121,22 @@ dotnet dev-certs https --trust
  - To establish trust for HTTPS connections in .NET Core applications during development, you can use the dotnet dev-certs command-line tool. This tool helps generate and manage development certificates. Here's how you can use it to trust the HTTPS certificate.
  - Trust the Certificate: The --trust option automatically trusts the generated certificate. This means that when you run your .NET Core application with HTTPS enabled, the application will use this certificate, and your browser or HTTP client will trust it.
 
-### 20: https://jsonplaceholder.typicode.com/
+### 21: https://jsonplaceholder.typicode.com/
 Free fake and reliable API for testing and prototyping.
 
-### 21: https://www.ssllabs.com/ssltest/analyze.htm
+### 22: https://www.ssllabs.com/ssltest/analyze.htm
   - SSL Labs provides a detailed assessment of a website's SSL/TLS setup, including information about certificate validity, supported protocols, cipher suites, and security vulnerabilities.
 
-### 22: TraceRoute:
+### 23: TraceRoute:
    - [Traceroute](https://tools.keycdn.com/traceroute) -
    - Traceroute, also called tracert, is a utility that uses ICMP packets to record the route through the internet from one computer to another. It calculates the time taken for each hop as the packet is routed to the destination. To guarantee accuracy, each hop is queried multiple times (in this case four times) to better measure the response of that particular hop.
    -  https://tools.keycdn.com/traceroute: This tool is typically used to diagnose hiccups or interruptions in the transfer of data and pinpoint where along the chain it occurred. This IPv4 or IPv6 traceroute is unique in that it allows you to simultaneously test different locations at once. This lets you quickly determine if there is any packet loss or unexpected latency to the given IP or hostname. A CDN can help dramatically reduce latency by minimizing the distance between hops.
 
-### 23: TNC: Displays diagnostic information for a connection. The command is essentially checking if your machine can establish a connection to the specified host using port. 
+### 24: TNC: Displays diagnostic information for a connection. The command is essentially checking if your machine can establish a connection to the specified host using port. 
    ```ps1
       tnc ocsp.globalsign.com -Port 80
    ```
-### 23 `certutil -urlcache`
+### 25 `certutil -urlcache`
    - **View cache**: Shows the list of URLs of certificates and CRLs stored in the cache.
      ```bash
         certutil -urlcache
@@ -138,13 +145,13 @@ Free fake and reliable API for testing and prototyping.
      ```bash
         certutil -urlcache * delete
      ```
-### 24: glogg - the fast, smart log explorer
+### 26: glogg - the fast, smart log explorer
    - https://glogg.bonnefon.org/index.html
 https://github.com/nirajp82/References
 
-### 35: SSL (Cert Details) Checker
+### 30: SSL (Cert Details) Checker
    - https://www.ssl.org/report/github.com
    - https://www.immuniweb.com/ssl/ 
 
-### 36: BenchmarkDotNet
+### 31: BenchmarkDotNet
    - One of the most popular libraries for benchmarking in .NET is BenchmarkDotNet. This package allows you to run benchmarks and compare the performance of multiple methods in a standardized way, with detailed results.
