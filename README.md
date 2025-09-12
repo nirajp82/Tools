@@ -155,3 +155,63 @@ https://github.com/nirajp82/References
 
 ### 31: BenchmarkDotNet
    - One of the most popular libraries for benchmarking in .NET is BenchmarkDotNet. This package allows you to run benchmarks and compare the performance of multiple methods in a standardized way, with detailed results.
+
+### **32: chrome://net-export/**
+
+**What it is:**
+
+* `chrome://net-export/` is a **Chrome internal tool** for capturing **network traffic logs**.
+* Unlike traditional packet capture (like Wireshark), this is Chrome-specific and **logs the network layer events** inside Chrome, including requests, headers, and errors.
+
+**Why it’s useful:**
+
+* Debugging network issues in Chrome (e.g., HTTPS requests, redirects, blocked requests)
+* Troubleshooting performance issues
+* Capturing logs for support or development purposes
+
+**How it works:**
+
+1. Go to Chrome and open `chrome://net-export/`.
+2. Click **“Start Logging to Disk”**.
+3. Perform the actions you want to capture in Chrome.
+4. Click **“Stop Logging”**.
+5. The result is a `.json` file containing all network events.
+6. You can view it at [NetLog Viewer](https://netlog-viewer.appspot.com/) for **human-readable analysis**.
+
+**Key points:**
+
+* You get detailed info about DNS lookups, TCP/SSL handshakes, HTTP requests, and errors.
+* Great for debugging tricky network problems like why `safebrowsing.googleapis.com` requests are sent or blocked.
+
+### 33: The [NetLog Viewer](https://netlog-viewer.appspot.com/) is a web application developed by the Chromium project to analyze network activity captured by Chrome's `chrome://net-export/` tool. It allows you to visualize detailed network events, such as DNS lookups, HTTP requests, socket connections, and more, in a user-friendly interface.
+   - By default, the NetLog Viewer processes the log entirely on your device; no data is uploaded to remote servers. However, if you choose to include raw bytes during logging, be aware that sensitive information such as cookies and credentials may be captured. It's advisable to handle such logs with caution and share them only with trusted parties.
+
+How to Use the NetLog Viewer
+
+1. **Capture a NetLog File**:
+
+   * Open Chrome and navigate to `chrome://net-export/`.
+   * Click **“Start Logging to Disk”**.
+   * Reproduce the network issue you're experiencing.
+   * Return to the `chrome://net-export/` tab and click **“Stop Logging”**.
+   * Save the resulting `.json` file to your computer.
+
+2. **Analyze the Log**:
+
+   * Go to [https://netlog-viewer.appspot.com/](https://netlog-viewer.appspot.com/).
+   * Click **“Choose File”** and select the `.json` file you saved earlier.
+   * The viewer will process and display the network events captured in the log.
+
+3: **Key Features of the NetLog Viewer**
+
+* **Event Timeline**: Visualize the sequence and timing of network events.
+* **DNS Lookups**: Inspect DNS queries and their responses.
+* **Sockets**: Examine open and used sockets during the session.
+* **HTTP Requests**: Analyze details of HTTP/HTTPS requests and responses.
+* **QUIC & HTTP/2**: View information about QUIC and HTTP/2 sessions.
+* **Cache**: Inspect cached entries and their statistics.
+* **Modules**: List active Chrome extensions and apps.
+* **Prerender**: View active prerender websites and their history.
+
+
+
