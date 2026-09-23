@@ -183,7 +183,9 @@ https://github.com/nirajp82/References
 * You get detailed info about DNS lookups, TCP/SSL handshakes, HTTP requests, and errors.
 * Great for debugging tricky network problems like why `safebrowsing.googleapis.com` requests are sent or blocked.
 
-### 33: The [NetLog Viewer](https://netlog-viewer.appspot.com/) is a web application developed by the Chromium project to analyze network activity captured by Chrome's `chrome://net-export/` tool. It allows you to visualize detailed network events, such as DNS lookups, HTTP requests, socket connections, and more, in a user-friendly interface.
+### 33: The [NetLog Viewer](https://netlog-viewer.appspot.com/) 
+
+It is a web application developed by the Chromium project to analyze network activity captured by Chrome's `chrome://net-export/` tool. It allows you to visualize detailed network events, such as DNS lookups, HTTP requests, socket connections, and more, in a user-friendly interface.
    - By default, the NetLog Viewer processes the log entirely on your device; no data is uploaded to remote servers. However, if you choose to include raw bytes during logging, be aware that sensitive information such as cookies and credentials may be captured. It's advisable to handle such logs with caution and share them only with trusted parties.
 
 How to Use the NetLog Viewer
@@ -215,3 +217,15 @@ How to Use the NetLog Viewer
 
 
 
+
+### 34. **Clumsy:**
+
+* **Description:** Clumsy is a lightweight network testing utility for Windows that intercepts live network packets and intentionally degrades them. It allows developers to simulate poor network conditions—such as lag, dropped packets, duplicates, and tampering—to test how applications behave on unreliable connections.
+* **Example Usage:**
+* Download Clumsy from the [Official Clumsy Page](https://jagt.github.io/clumsy/?utm_source=gemini).
+* Launch the executable (no installation required) and specify a packet filter using WinDivert syntax to target specific traffic.
+* For example, to target only outbound HTTP/HTTPS traffic:
+<img width="612" height="438" alt="image" src="https://github.com/user-attachments/assets/91e39f4d-972b-4537-b27e-1d0cb048107c" />
+
+* Check the boxes for the conditions you want to simulate (e.g., enable **Lag** and set it to `300ms`, or enable **Drop** with a `10%` chance).
+* Click the **Start** button to instantly apply the degraded network conditions without altering your system's actual network adapter settings.
