@@ -216,16 +216,43 @@ How to Use the NetLog Viewer
 * **Prerender**: View active prerender websites and their history.
 
 
-
-
 ### 34. **Clumsy:**
 
 * **Description:** Clumsy is a lightweight network testing utility for Windows that intercepts live network packets and intentionally degrades them. It allows developers to simulate poor network conditions—such as lag, dropped packets, duplicates, and tampering—to test how applications behave on unreliable connections.
 * **Example Usage:**
 * Download Clumsy from the [Official Clumsy Page](https://jagt.github.io/clumsy/?utm_source=gemini).
 * Launch the executable (no installation required) and specify a packet filter using WinDivert syntax to target specific traffic.
-* For example, to target only outbound HTTP/HTTPS traffic:
-<img width="612" height="438" alt="image" src="https://github.com/user-attachments/assets/91e39f4d-972b-4537-b27e-1d0cb048107c" />
-
 * Check the boxes for the conditions you want to simulate (e.g., enable **Lag** and set it to `300ms`, or enable **Drop** with a `10%` chance).
 * Click the **Start** button to instantly apply the degraded network conditions without altering your system's actual network adapter settings.
+
+* For example:
+<img width="612" height="438" alt="image" src="https://github.com/user-attachments/assets/91e39f4d-972b-4537-b27e-1d0cb048107c" />
+Based on the numbered icons in **image_32e6f2.png**, here is the formatted breakdown of the Clumsy interface:
+
+1. **Filter Input:**
+* Packets are captured based on this filter. The syntax is similar to a boolean expression in most programming languages.
+
+
+2. **Presets:**
+* A dropdown list of built-in presets to help you get started. You can skim through these to learn how filters are structured.
+* Once you are familiar with Clumsy, you can add your own custom filters by editing the `config.txt` file bundled with the executable.
+
+
+3. **Control Button:**
+* Click **Start** to begin capturing traffic. Once running, the button text changes to **Stop**.
+* **Status Icon:** A small icon on the left turns green when packets are successfully captured. If packet rejection fails (often due to filter limitations or syntax errors), it will turn red, indicating you need to adjust your filter.
+
+
+4. **Function Control:**
+* Tick the checkboxes (e.g., Lag, Drop, Throttle) to enable specific network degradation functions.
+* You can toggle these checkboxes on and off at any time during the capture process. An indicator icon on the left will turn green when the function is actively working.
+
+
+5. **Parameters Control:**
+* Additional tuning controls for each enabled function. The most common parameters include:
+* **Inbound / Outbound:** Determines whether to process incoming or outgoing packets. These checkboxes are independent of your main filter and can be changed on the fly.
+* **Chance (%):** The probability of the function executing. You generally want to set this to a reasonable fraction so you aren't dropping or tampering with packets 100% of the time.
+
+6. **Status & Notices:**
+* Displays helpful text messages, warnings, and notices about the current state.
+* *Tip:* If you just want to test the tool, you can set your filter to `tcp and outbound`, apply a function, and browse the web to see the effects in real-time.
